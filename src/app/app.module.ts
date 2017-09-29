@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BindingComponent } from './binding/binding.component';
+import { BootstrapComponent } from './bootstrap/bootstrap.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BindingComponent } from './binding/binding.component';
     CoursesComponent,
     CourseComponent,
     AuthorsComponent,
-    BindingComponent
+    BindingComponent,
+    BootstrapComponent
   ],
   imports: [
     BrowserModule
