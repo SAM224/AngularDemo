@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BindingComponent implements OnInit {
   imageUrl = 'http://lorempixel.com/400/200';
+  colSpan = 2;
   constructor() { }
 
   ngOnInit() {
