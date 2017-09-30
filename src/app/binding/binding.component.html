@@ -31,3 +31,9 @@
   <label >Two-way binding</label>
   <input [(ngModel)]="name" (keyup.enter)="onKeyUp2()" class="form-control">
 </div>
+
+{{course.title | lowercase | uppercase}} <br>
+{{course.students | number}} <br>
+{{course.rating | number:'1.2-2'}} <br>
+{{course.price | currency: 'AUD':true}} <br>
+{{course.releaseDate | date:'shortDate'}} <br>
