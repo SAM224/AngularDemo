@@ -15,7 +15,12 @@ export class BindingComponent implements OnInit {
     $event.stopPropagation();
     console.log('button was clicked', $event);
   }
+  
   onDivClick = ($event) => console.log('Div was clicked');
+  
+  onKeyUp = () => console.log('ENTER was pressed.');
+  
+
   ngOnInit() {
   }
 
