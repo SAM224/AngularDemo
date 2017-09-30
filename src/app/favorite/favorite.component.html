@@ -1,0 +1,6 @@
+<span class="glyphicon favorite" 
+[class.glyphicon-star]="isFavorite"
+[class.glyphicon-star-empty]="!isFavorite"
+(click)="onToggle()">
+</span>
+<span class="glyphicon favorite glyphicon-star{‌{isFavorite ? null : '-empty'}}" (click)="onToggle()"></span>

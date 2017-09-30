@@ -11,6 +11,7 @@ import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BindingComponent } from './binding/binding.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BootstrapComponent } from './bootstrap/bootstrap.component';
     AuthorsComponent,
     BindingComponent,
     BootstrapComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
