@@ -9,6 +9,8 @@ export class BindingComponent implements OnInit {
   imageUrl = 'http://lorempixel.com/400/200';
   colSpan = 2;
   isActive = true;
+  name='Shady';
+
   constructor() { }
 
   onClick = ($event) => {
@@ -18,8 +20,9 @@ export class BindingComponent implements OnInit {
   
   onDivClick = ($event) => console.log('Div was clicked');
   
-  onKeyUp = () => console.log('ENTER was pressed.');
+  onKeyUp = (email) => console.log(email);
   
+  onKeyUp2 = () => console.log(this.name);
 
   ngOnInit() {
   }

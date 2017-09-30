@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AuthorsService } from './authors.service';
 import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
@@ -20,7 +21,8 @@ import { BootstrapComponent } from './bootstrap/bootstrap.component';
     BootstrapComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     CoursesService,

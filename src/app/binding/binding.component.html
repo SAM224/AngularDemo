@@ -24,4 +24,10 @@
 <div (click)="onDivClick($event)">
   <button class="btn btn-primary" (click)="onClick($event)">Event binding</button>  
 </div>
-<input (keyup.enter)="onKeyUp()" value="Event filtering">
+<input  (keyup.enter)="onKeyUp(email.value)" value="EventFiltering">
+<input #email (keyup.enter)="onKeyUp(email.value)" value="Template variable">
+
+<div class="form-group">
+  <label >Two-way binding</label>
+  <input [(ngModel)]="name" (keyup.enter)="onKeyUp2()" class="form-control">
+</div>
