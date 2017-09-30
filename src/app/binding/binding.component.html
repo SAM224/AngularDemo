@@ -21,3 +21,6 @@
 
 <label for="" class="label label-warning" [class.active]="isActive">class binding</label>
 <label for="" class="label" [style.background]="isActive?'blue':'red'">style binding</label>
+<div (click)="onDivClick($event)">
+  <button class="btn btn-primary" (click)="onClick($event)">Event binding</button>  
+</div>

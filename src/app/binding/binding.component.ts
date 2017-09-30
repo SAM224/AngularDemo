@@ -11,6 +11,11 @@ export class BindingComponent implements OnInit {
   isActive = true;
   constructor() { }
 
+  onClick = ($event) => {
+    $event.stopPropagation();
+    console.log('button was clicked', $event);
+  }
+  onDivClick = ($event) => console.log('Div was clicked');
   ngOnInit() {
   }
 
