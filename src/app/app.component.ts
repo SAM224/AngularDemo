@@ -1,3 +1,5 @@
+import { IsoundOptionChangedEventArgs } from './component-api/Component-api.interface';
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,7 +13,7 @@ export class AppComponent {
     isMuted: true
   }
 
-  onSoundOptionChanged(eventArgs) {
+  onSoundOptionChanged(eventArgs: IsoundOptionChangedEventArgs) {
     console.log('sound option changed:', eventArgs);
   }
 }
