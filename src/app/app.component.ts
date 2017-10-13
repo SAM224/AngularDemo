@@ -11,7 +11,7 @@ export class AppComponent {
     isMuted: true
   }
 
-  onSoundOptionChanged() {
-    console.log('sound option changed');
+  onSoundOptionChanged($event) {
+    console.log('sound option changed:', $event);
   }
 }
