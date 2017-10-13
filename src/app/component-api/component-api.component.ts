@@ -7,12 +7,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ComponentApiComponent implements OnInit {
   @Input('isMuted') is_Muted: boolean;
-  @Output() change =new EventEmitter();
+  @Output('change') click =new EventEmitter();
     constructor() { }
   
     onToggle(){
       this.is_Muted = !this.is_Muted;
-      this.change.emit({newValue: this.is_Muted});
+      this.click.emit({newValue: this.is_Muted});
     }
   ngOnInit() {
   }
