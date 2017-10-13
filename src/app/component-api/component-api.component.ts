@@ -12,7 +12,7 @@ export class ComponentApiComponent implements OnInit {
   
     onToggle(){
       this.is_Muted = !this.is_Muted;
-      this.change.emit(this.is_Muted);
+      this.change.emit({newValue: this.is_Muted});
     }
   ngOnInit() {
   }
