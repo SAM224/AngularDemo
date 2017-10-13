@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-component-api',
   templateUrl: './component-api.component.html',
-  styleUrls: ['./component-api.component.css'],
-  inputs: ['isMuted']
+  styleUrls: ['./component-api.component.css']
 })
 export class ComponentApiComponent implements OnInit {
-    isMuted: boolean;
+  @Input() isMuted: boolean;
   
     constructor() { }
   
