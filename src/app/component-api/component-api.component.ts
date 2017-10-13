@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-component-api',
@@ -6,12 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./component-api.component.css']
 })
 export class ComponentApiComponent implements OnInit {
-  @Input() isMuted: boolean;
-  
+  @Input('isMuted') is_Muted: boolean;
+  @Output() change =new EventEmitter();
     constructor() { }
   
-    onToggle = () => this.isMuted = !this.isMuted;
-  
+    onToggle(){
+      this.is_Muted = !this.is_Muted;
+      this.change.emit();
+    }
   ngOnInit() {
   }
 

@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //title = 'my demo app';
   post = {
     title: 'my demo app',
     isMuted: true
+  }
+
+  onSoundOptionChanged() {
+    console.log('sound option changed');
   }
 }

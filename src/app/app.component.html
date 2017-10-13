@@ -25,7 +25,7 @@
   <div class="form-group col-md-4">
     <label>Component API</label>
     <div>
-      <app-component-api [isMuted]="post.isMuted"></app-component-api>
+      <app-component-api [isMuted]="post.isMuted" (change)="onSoundOptionChanged()"></app-component-api>
     </div>
   </div>
 </div>
