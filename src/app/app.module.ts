@@ -12,6 +12,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { BindingComponent } from './binding/binding.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { ComponentApiComponent } from './component-api/component-api.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     BindingComponent,
     BootstrapComponent,
     SummaryPipe,
-    FavoriteComponent
+    FavoriteComponent,
+    ComponentApiComponent
   ],
   imports: [
     BrowserModule,
