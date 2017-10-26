@@ -14,6 +14,7 @@ import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ComponentApiComponent } from './component-api/component-api.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.compo
     SummaryPipe,
     FavoriteComponent,
     ComponentApiComponent,
-    BootstrapPanelComponent
+    BootstrapPanelComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
