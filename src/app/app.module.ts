@@ -13,6 +13,7 @@ import { BindingComponent } from './binding/binding.component';
 import { BootstrapComponent } from './bootstrap/bootstrap.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ComponentApiComponent } from './component-api/component-api.component';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ComponentApiComponent } from './component-api/component-api.component';
     BootstrapComponent,
     SummaryPipe,
     FavoriteComponent,
-    ComponentApiComponent
+    ComponentApiComponent,
+    BootstrapPanelComponent
   ],
   imports: [
     BrowserModule,
