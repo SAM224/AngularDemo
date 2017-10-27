@@ -14,6 +14,15 @@ courses = [
 viewMode = 'somethinElse';
   constructor() { }
 
+  onAdd(lastIndex){
+    
+    this.courses.push({id: 4, name:'course4 '});
+  }
+  onRemove(course){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index,1);
+  }
+
   ngOnInit() {
   }
 

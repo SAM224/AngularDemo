@@ -8,9 +8,12 @@
 
 <div [hidden]="courses.length == 0">
   <h4>List of courses</h4>
+  <button (click)="onAdd()">Add</button>
   <ul>
     <li *ngFor="let course of courses; index as i; even as isEven">
-      {{i}} - {{ course.name }} <span *ngIf="isEven" >(EVEN)</span>
+      {{i+1}} - {{ course.name }} 
+      <button (click)="onRemove(course)">Remove</button>
+      <span *ngIf="isEven" >(EVEN)</span>
     </li>
   </ul>
 </div>
