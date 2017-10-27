@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
 courses = [];
+viewMode = 'somethinElse';
   constructor() { }
 
   ngOnInit() {
