@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directives.component.css']
 })
 export class DirectivesComponent implements OnInit {
-courses = [];
+courses = [
+  {id: 1, name: 'course1 '},
+  {id: 2, name: 'course2 '},
+  {id: 3, name: 'course3 '}
+];
 viewMode = 'somethinElse';
   constructor() { }
 
