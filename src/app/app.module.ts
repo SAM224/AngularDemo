@@ -15,6 +15,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { ComponentApiComponent } from './component-api/component-api.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DirectivesComponent } from './directives/directives.component';
     FavoriteComponent,
     ComponentApiComponent,
     BootstrapPanelComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

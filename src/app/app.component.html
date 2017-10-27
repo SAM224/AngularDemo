@@ -5,41 +5,60 @@
   </h2>
   <img width="100" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<div class="row">
-  <div class="col-md-4">
-    <courses></courses>
-    <authors></authors>
-    <app-bootstrap></app-bootstrap>
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode == 'tdf'">
+    <a (click)="viewMode = 'tdf'">Template-driven forms</a>
+  </li>
+  <li [class.active]="viewMode == 'rest'">
+    <a (click)="viewMode = 'rest'">rest</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'tdf'">
+    <contact-form>
+    </contact-form>
   </div>
-  <div class="col-md-8">
-    <binding></binding>
-  </div>
-</div>
-<div class="row">
-  <div class="form-group col-md-4">
-    <label>Challange</label>
-    <div>
-      <app-favorite></app-favorite>
-    </div>
-  </div>
-  <div class="form-group col-md-4">
-    <label>Component API</label>
-    <div>
-      <app-component-api [isMuted]="post.isMuted" (change)="onSoundOptionChanged($event)"></app-component-api>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="form-group col-md-4">
-    <bootstrap-panel>
-      <ng-container class="heading">Heading</ng-container>
-      <div class="body">
-        <h4>body</h4>
-        <p>some content...</p>
+  <div *ngSwitchCase="'rest'">
+    <div class="row">
+      <div class="col-md-4">
+        <courses></courses>
+        <authors></authors>
+        <app-bootstrap></app-bootstrap>
       </div>
-    </bootstrap-panel>
+      <div class="col-md-8">
+        <binding></binding>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label>Challange</label>
+        <div>
+          <app-favorite></app-favorite>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label>Component API</label>
+        <div>
+          <app-component-api [isMuted]="post.isMuted" (change)="onSoundOptionChanged($event)"></app-component-api>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <bootstrap-panel>
+          <ng-container class="heading">Heading</ng-container>
+          <div class="body">
+            <h4>body</h4>
+            <p>some content...</p>
+          </div>
+        </bootstrap-panel>
+      </div>
+      <div class="form-group col-md-4">
+        <app-directives></app-directives>
+      </div>
+    </div>
+
   </div>
-  <div class="form-group col-md-4">
-      <app-directives></app-directives>
-  </div>
+  <div *ngSwitchDefault>Otherwise</div>
 </div>

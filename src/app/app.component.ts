@@ -12,6 +12,7 @@ export class AppComponent {
     title: 'my demo app',
     isMuted: true
   }
+  viewMode = 'somethingElse';
 
   onSoundOptionChanged(eventArgs: IsoundOptionChangedEventArgs) {
     console.log('sound option changed:', eventArgs);
