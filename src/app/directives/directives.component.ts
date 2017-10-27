@@ -21,7 +21,6 @@ viewMode = 'somethinElse';
 
   trackCourses= (index, course) => course ? course.id: undefined
   
-
   onAdd(lastIndex){
     
     this.courses.push({id: 4, name:'course4 '});

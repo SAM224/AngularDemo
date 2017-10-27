@@ -1,6 +1,8 @@
-<span class="glyphicon favorite" 
-[class.glyphicon-star]="isFavorite"
-[class.glyphicon-star-empty]="!isFavorite"
+<span class="glyphicon favorite"
+[ngClass]="{
+    'glyphicon-star' : isFavorite,
+    'glyphicon-star-empty' : !isFavorite
+}" 
 (click)="onToggle()">
 </span>
 <span class="glyphicon favorite glyphicon-star{‌{isFavorite ? null : '-empty'}}" (click)="onToggle()"></span>
