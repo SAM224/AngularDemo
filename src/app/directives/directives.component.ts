@@ -6,13 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directives.component.css']
 })
 export class DirectivesComponent implements OnInit {
-courses = [
-  {id: 1, name: 'course1 '},
-  {id: 2, name: 'course2 '},
-  {id: 3, name: 'course3 '}
-];
+courses = [];
 viewMode = 'somethinElse';
   constructor() { }
+
+  LoadCourses(){
+    this.courses = [
+      {id: 1, name: 'course1 '},
+      {id: 2, name: 'course2 '},
+      {id: 3, name: 'course3 '}
+    ];
+    
+  };
+
+  trackCourses= (index, course) => course ? course.id: undefined
+  
 
   onAdd(lastIndex){
     

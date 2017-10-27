@@ -5,15 +5,17 @@
 <ng-template #noCourses>
   <h4>No Courses</h4>
 </ng-template>
-
+<button (click)="LoadCourses()">Load Courses</button>
 <div [hidden]="courses.length == 0">
   <h4>List of courses</h4>
-  <button (click)="onAdd()">Add</button>
   <ul>
-    <li *ngFor="let course of courses; index as i; even as isEven">
-      {{i+1}} - {{ course.name }} 
+    <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourses">
+      {{i+1}} - {{ course.name }}
       <button (click)="onRemove(course)">Remove</button>
-      <span *ngIf="isEven" >(EVEN)</span>
+      <span *ngIf="isEven">(EVEN)</span>
+    </li>
+    <li>
+      <button (click)="onAdd()">Add</button>
     </li>
   </ul>
 </div>
