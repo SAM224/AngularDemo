@@ -9,6 +9,9 @@
   <li [class.active]="viewMode == 'tdf'">
     <a (click)="viewMode = 'tdf'">Template-driven forms</a>
   </li>
+  <li [class.active]="viewMode == 'rf'">
+    <a (click)="viewMode = 'rf'">Reactive forms</a>
+  </li>
   <li [class.active]="viewMode == 'rest'">
     <a (click)="viewMode = 'rest'">rest</a>
   </li>
@@ -19,6 +22,10 @@
     <contact-form>
     </contact-form>
   </div>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'rf'">
+      <signup-form></signup-form>
+    </div>
   <div *ngSwitchCase="'rest'">
     <div class="row">
       <div class="col-md-4">
