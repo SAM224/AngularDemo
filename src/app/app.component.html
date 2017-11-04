@@ -12,6 +12,9 @@
   <li [class.active]="viewMode == 'rf'">
     <a (click)="viewMode = 'rf'">Reactive forms</a>
   </li>
+  <li [class.active]="viewMode == 'sc'">
+    <a (click)="viewMode = 'sc'">Service consumption</a>
+  </li>
   <li [class.active]="viewMode == 'rest'">
     <a (click)="viewMode = 'rest'">rest</a>
   </li>
@@ -25,6 +28,9 @@
   <div [ngSwitch]="viewMode">
     <div *ngSwitchCase="'rf'">
       <signup-form></signup-form>
+    </div>
+    <div *ngSwitchCase="'sc'">
+      <app-posts></app-posts>
     </div>
   <div *ngSwitchCase="'rest'">
     <div class="row">

@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SummaryPipe } from './summary.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +18,7 @@ import { ComponentApiComponent } from './component-api/component-api.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,14 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     BootstrapPanelComponent,
     DirectivesComponent,
     ContactFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService,
