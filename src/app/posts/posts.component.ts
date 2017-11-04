@@ -10,10 +10,7 @@ export class PostsComponent implements OnInit {
   posts: any[];
   private url = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private http: Http) {
-    http.get(this.url)
-      .subscribe(response => {
-        this.posts = response.json();
-      });
+
   }
 
   createPost(input: HTMLInputElement) {
@@ -25,6 +22,13 @@ export class PostsComponent implements OnInit {
         post['id'] = response.json().id;
         this.posts.splice(0, 0, post);
         console.log(response.json());
+      });
+  }
+
+  ngOnInit() {
+    this.http.get(this.url)
+      .subscribe(response => {
+        this.posts = response.json();
       });
   }
 
@@ -40,12 +44,11 @@ export class PostsComponent implements OnInit {
     this.http.delete(this.url + '/' + post.id)
       .subscribe(response => {
         let index = this.posts.indexOf(post);
-        this.posts.splice(index,1);
+        this.posts.splice(index, 1);
         console.log(response.json());
       });
   }
 
-  ngOnInit() {
-  }
+
 
 }
