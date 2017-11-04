@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
 @Injectable()
@@ -14,19 +15,23 @@ export class DataService {
 
     getAll = () => this.http
         .get(this.url)
+        .map(response => response.json())
         .catch(this.handleError);
 
     create = (resource) => this.http
         .post(this.url, JSON.stringify(resource))
+        .map(response => response.json())
         .catch(this.handleError);
 
 
     udpate = (resource) => this.http
         .patch(this.url + '/' + resource.id, JSON.stringify({ isRead: true }))
+        .map(response => response.json())
         .catch(this.handleError);
 
     delete = (id) => this.http
         .delete(this.url + '/' + id)
+        .map(response => response.json())
         .catch(this.handleError);
 
 
