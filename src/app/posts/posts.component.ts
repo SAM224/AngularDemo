@@ -15,12 +15,14 @@ export class PostsComponent implements OnInit {
   }
   ngOnInit() {
     this.service.getPosts()
-      .subscribe(response => {
-        this.posts = response.json();
-      }, error => {
-        alert('An unexpected error occurred.');
-        console.log(error);
-      });
+      .subscribe(
+        response => {
+          this.posts = response.json();
+        },
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+        });
   }
 
   createPost(input: HTMLInputElement) {
@@ -28,24 +30,33 @@ export class PostsComponent implements OnInit {
     input.value = '';
 
     this.service.createPost(post)
-      .subscribe(response => {
-        post['id'] = response.json().id;
-        this.posts.splice(0, 0, post);
-        console.log(response.json());
-      }, error => {
-        alert('An unexpected error occurred.');
-        console.log(error);
-      });
+      .subscribe(
+        response => {
+          post['id'] = response.json().id;
+          this.posts.splice(0, 0, post);
+          console.log(response.json());
+        }, 
+        (error: Response) => {
+          if(error.status === 400){
+            //this.form.serErrors(error.json());  
+          }
+          else {
+            alert('An unexpected error occurred.');
+            console.log(error);  
+          }
+        });
 
   }
 
- 
+
 
   updatePost(post) {
     this.service.updatePost(post)
-      .subscribe(response => {
-        console.log(response.json());
-      }, error => {
+      .subscribe(
+        response => {
+          console.log(response.json());
+      }, 
+      error => {
         alert('An unexpected error occurred.');
         console.log(error);
       });
@@ -54,16 +65,20 @@ export class PostsComponent implements OnInit {
 
   deletePost(post) {
     this.service.deletePost(post)
-      .subscribe(response => {
-
-        let index = this.posts.indexOf(post);
-        this.posts.splice(index, 1);
-
-        console.log(response.json());
-      }, error => {
-        alert('An unexpected error occurred.');
-        console.log(error);
-      });
+      .subscribe(
+        response => {
+          let index = this.posts.indexOf(post);
+          this.posts.splice(index, 1);
+          console.log(response.json());
+        }, 
+        (error: Response) => {
+          if( error.status === 404)
+            alert('This post is already been deleted.');
+          else {
+            alert('An unexpected error occurred.');
+            console.log(error);
+          }
+        });
   }
 
 
