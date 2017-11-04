@@ -6,6 +6,9 @@
     <button
       (click)="updatePost(post)" 
       class="btn btn-default btn-sm glyphicon glyphicon-edit"></button>
+      <button
+      (click)="deletePost(post)" 
+      class="btn btn-default btn-sm glyphicon glyphicon-trash"></button>
     {{ post.title }}
   </li>
 </ul>
